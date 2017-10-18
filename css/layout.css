@@ -1,0 +1,422 @@
+.container{
+	position: relative;
+	width: 10rem;
+	height: 100vh;
+}
+/* 首页样式 */
+.index_block{
+	display: none;
+	height: 100vh;
+	background-image: url("../img/index_bg.jpg");
+	background-size: 100% 100%;
+}
+.index_block .title{
+	padding-top:1.5rem;
+}
+.index_block .title img{
+	display: block;
+	width: 9rem;
+	height: 7rem;
+	margin:auto;
+}
+.index_block .btns {
+	width: 9rem;
+	height: 2rem;
+	margin:auto;
+	margin-top:10vh
+}
+.index_block .btns li{
+	display: inline-block;
+}
+.index_block .foreword img,
+.index_block .notice img{
+	width:2rem;
+}
+.index_block .btns .foreword,
+.index_block .btns .notice{
+	width: 2rem;
+	margin-top: 0.5rem
+}
+.index_block .start img,
+.index_block .start{
+	width: 4rem;
+}
+.index_block .btns .start{
+	margin:0 0.5rem;
+}
+/* 前言页面 */
+.index_text_block{
+	display: none;
+	position: absolute;
+	top:0;
+	height: 100vh;
+	width: 10rem;
+	background-color: rgba(0,0,0,.3);
+}
+.index_text_content{
+	position: absolute;
+	top:25vh;
+	left: 0.5rem;
+	width: 9rem;
+	border-radius: 10px;
+}
+.index_text_block .foreword_block,
+.index_text_block .notice_block{
+	display: none;
+}
+.index_text_block .foreword_block{
+	margin-top: 10vh
+}
+.index_text_block .title{
+	position: relative;
+	height: 1.2rem;
+	background-image: url('../img/foreword_bar.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	line-height: 1.2rem
+}
+.index_text_block .title h1{
+	font-size: 1.5em;
+	color: #fff;
+	font-weight: normal;
+	text-indent: 1em
+}
+.index_text_block .close_btn{
+	position: absolute;
+	top: -0.2rem;
+	right: -0.2rem
+}
+.index_text_block .close_btn img{
+	width: 1rem;
+	height: 1rem
+}
+.index_text_block button{
+	background-color: transparent;
+}
+.index_text_block .text {
+	background-color: #fff;
+	padding: 1em;
+	padding-bottom:2em;
+	text-indent: 2em;
+	line-height: 1.8em;
+	color: #474747;
+	font-size:1.2em;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.index_text_block .notice_block .text{
+	font-size:1em;
+	line-height: 1.5em;
+	text-indent: 0em;
+}
+
+/* 答题页面 */
+.quest_block {
+	display: none;
+	height: 100vh;
+	background-image: url("../img/quest_bg.jpg");
+	background-size: 100% 100%;
+}
+.quest_block .quest_num {
+	box-sizing: border-box;
+	margin-left: 0.5rem;
+	background-image: url('../img/quest_num.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 2rem;
+	height: 3rem;
+	padding-top: 1.2rem;
+	font-size: 1.5em;
+	padding-left: .8em;
+	color: #fff;
+	font-family:Times New Roman,serif;
+}
+.quest_block .quest_num p:last-child {
+	text-indent: 1em;
+}
+.quest_block .settimeout{
+	box-sizing: border-box;
+	position: absolute;
+	top: .5rem;
+	right: 0;
+	background-image: url('../img/settimeout.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width:5rem;
+	height: 2rem;
+	color: #fff;
+	font-size: 2em;
+	padding-top: 1em;
+	padding-left: 2rem
+}
+.quest_block .quest {
+	color: #925e3d;
+	width: 9rem;
+	margin:auto;
+	margin-top: 1em;
+	line-height: 1.8em
+}
+.quest_block .quest p{
+	font-size: 1.2em;
+	font-family: SimSun;
+	font-weight: bold;
+}
+.quest_block .quest p span{
+	text-decoration: underline;
+}
+.quest_block .quest li {
+	position: relative;
+	box-sizing: border-box;
+	width: 8rem;
+	margin-left: .5rem;
+	line-height: 5vh;
+	margin-top: 2vh;
+	background-color: #fff;
+	padding-left:4vh;
+	border-radius: 6px;
+}
+.quest_block .quest li.active{
+	background-color: #ffd161
+}
+.quest_block .quest li input{
+	display: none
+}
+.quest_block .quest li span{
+	display: block;
+	position: absolute;
+	left: -2.5vh;
+	background-color: #f17f06;
+	border-radius: 50%;
+	width:5vh;
+	height: 5vh;
+	line-height: 5vh;
+	text-align: center;
+	color: #fff;
+}
+.quest_block .quest li .true{
+	background-image: url('../img/true.png');
+}
+.quest_block .quest li .wrong{
+	background-image: url('../img/wrong.png');
+}
+.quest_block .quest li .true,
+.quest_block .quest li .wrong{
+	display: none;
+	position: absolute;
+	right: 0.5em;
+	top:0.25vh;
+	height: 4.5vh;
+	width: 4.5vh;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.quest_block .btns{
+	width: 9rem;
+	margin:auto;
+	margin-top: 5vh
+}
+.quest_block .pre,
+.quest_block .next,
+.quest_block .pre img,
+.quest_block .next img{
+	width: 3rem;
+	height: 1.2rem
+}
+.quest_block .tips,
+.quest_block .tips img{
+	height: 1.2rem;
+	width:1.2rem;
+}
+.quest_block .tips{
+	margin:0px 0.9rem;
+}
+/* 提示页面 */
+.tips_block{
+	display: none;
+	position: absolute;
+	top:0;
+	width: 10rem;
+	height: 100vh;
+	background-color: rgba(0,0,0,.4);
+}
+.tips_content{
+	position: absolute;
+	top:25vh;
+	left: 0.5rem;
+	width: 9rem;
+	border-radius: 10px;
+}
+.tips_block .title{
+	position: relative;
+	height: 1.2rem;
+	background-image: url('../img/foreword_bar.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	line-height: 1.2rem
+}
+.tips_block .title h1{
+	font-size: 1.5em;
+	color: #fff;
+	font-weight: normal;
+	text-indent: 1em
+}
+.tips_block .close_btn{
+	position: absolute;
+	top: -0.2rem;
+	right: -0.2rem
+}
+.tips_block .close_btn img{
+	width: 1rem;
+	height: 1rem
+}
+.tips_block button{
+	background-color: transparent;
+}
+.tips_block .text {
+	background-color: #fff;
+	padding: 1em;
+	padding-bottom:2em;
+	text-indent: 2em;
+	line-height: 1.8em;
+	color: #474747;
+	font-size:1.2em;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+/* 第五题 */
+.quest5 .ans5 li{
+	line-height: 4.5vh;
+}
+.quest_block .quest5 .ans5 li .true,
+.quest_block .quest5 .ans5 li .wrong{
+	height:80%;
+	top:0;
+	bottom: 0;
+	margin:auto;
+}
+/* 第七、八、十题 */
+.quest7 p,
+.quest8 p,
+.quest10 p{
+	font-size: 1em!important;
+	line-height: 1.8em!important;
+}
+@media (min-width:768px ) {
+	.quest7 p,
+	.quest8 p{
+		font-size: .8em!important;
+		line-height: 1.8em!important;
+	}
+	.quest10 p{
+		font-size: .8em!important;
+		line-height: 1.6em!important;
+	}
+}
+.quest7 .ans7 li,
+.quest8 .ans8 li,
+.quest10 .ans10 li{
+	width: 3.5rem;
+	float: left;
+}
+.quest7 .ans7 li:nth-child(odd),
+.quest8 .ans8 li:nth-child(odd),
+.quest10 .ans10 li:nth-child(odd){
+	margin-right: 1rem;
+}
+.quest7 .ans7 ul,
+.quest8 .ans8 ul,
+.quest10 .ans10 ul{
+	overflow: hidden;
+}
+/* 数钱页面 */
+.money_block {
+	height: 100vh;
+	background-image: url("../img/money_bg.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding-top: 1.5rem;
+}
+.money_block .title {
+	margin-left: 0.5rem;
+	background: url("../img/money_title.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 4rem;
+	height: .8rem;
+}
+.money_block .settimeout {
+	box-sizing: border-box;
+	position: absolute;
+	top: .5rem;
+	right: 0;
+	background-image: url('../img/settimeout.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width:5rem;
+	height: 2rem;
+	color: #fff;
+	font-size: 2em;
+	padding-top: 1em;
+	padding-left: 2rem
+}
+.money_block .money_count{
+	margin-top: .5rem;
+	color: #563805;
+	font-size: 2rem;
+	text-align: center;
+}
+.money_block .after_text{
+	display: none
+}
+.money_block .before_text,
+.money_block .after_text{
+	position: absolute;
+	top:0;
+	width: 10rem;
+	height: 100vh;
+	background-color: rgba(0,0,0,.7);
+
+}
+.money_block .before_text p,
+.money_block .after_text p{
+	color: #fff;
+	font-size: 2em;
+	line-height: 1.5em;
+	width: 9rem;
+	margin:auto;
+	text-align: center;
+	margin-top: 30vh;
+}
+.money_block .before_text input{
+	display: block;
+	margin:auto;
+	margin-top: 3vh;
+	width: 5rem;
+	height: 1rem;
+	text-indent: 1em;
+	font-size: 1em;
+	border-radius: 5px;
+}
+.money_block button{
+	display: block;
+	margin:auto;
+	background-color: transparent;
+	width: 4rem;
+	height: 2rem;
+	margin-top: 5vh
+}
+.money_block button img{
+	width: 4rem;
+	height: 2rem;
+}
+.before_text i{
+	display: block;
+	width: 4rem;
+	margin:auto;
+	margin-top: 0.5em;
+	color: #fe6048
+}
