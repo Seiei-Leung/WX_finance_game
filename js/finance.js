@@ -235,18 +235,18 @@ $(function(){
 	var
 		startY,
 		endY,
-		money_num = 0,
-		$money_num = $('.after_text span');
+		money_count = 0,
+		$money_count = $('.money_count span');
 	$money_block.on('touchstart',function(event){
 		event.preventDefault();
 		startY = event.originalEvent.changedTouches[0].pageY;
 	})
-	$money_block.on('touchmove',function(event){
+	$money_block.on('touchend',function(event){
 		event.preventDefault();
 		endY = event.originalEvent.changedTouches[0].pageY;
-		if ((endY-startY)>0) {
-			money_num += 1;
-			$money_num.text(money_num);
+		if ((startY-endY)>50) {
+			money_count += 1;
+			$money_count.text('' + money_count);
 		}
 	})
 })
