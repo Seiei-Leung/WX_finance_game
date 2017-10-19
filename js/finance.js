@@ -236,6 +236,7 @@ $(function(){
 			// phonenum_obj.url = '' + '?' + 'phonenum=' + phonenum;
 			// phonenum_obj.type = 'GET';
 			// $.ajax(phonenum_obj);
+			$('html,body').scrollTop('0');
 			$before_text.hide();
 			clearTimeout(T);
 			function countdown () {
