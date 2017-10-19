@@ -1,4 +1,5 @@
 $(function(){
+
 	/* 首页前言以及须知按钮 */
 	var
 		$foreword_a = $('.index_block .foreword a'),
@@ -144,6 +145,7 @@ $(function(){
 				'<div class="text tips' + (i+2) + '" style="display:none;"><p>' + q_list[i].t +'</p></div>'
 				))
 		}
+
 	// 提示功能
 	var
 		$tips_block = $('.quest_block .tips_block'),
@@ -224,6 +226,7 @@ $(function(){
 				},500)
 			}
 		})
+
 	// 提交电话号码,开始数钱
 	var
 		phonenum_obj = {},
@@ -244,23 +247,32 @@ $(function(){
 			window.scrollTo(0, 1);//摆正网页
 			clearTimeout(T);
 			function countdown () {
+				clearTimeout(T);
 				T = setTimeout(function(){
 				true_num -= 1;
 				if (true_num>0) {
 					$settimeout.text(true_num + '.000');
-				} else if(true_num==0) {
+				} else if (true_num==0) {
 					$settimeout.text(true_num + '.000');
-					$after_text.find('span:first-child').text(money_count)
+					$after_text.find('span:first-child').text($money_count.text());
 					$after_text.show();
+					clearTimeout(T)
 				}
 				countdown();
 			},1000);
 			}
-			countdown();
+			if (true_num == 0) {
+				$settimeout.text('0.000');
+				$after_text.find('span:first-child').text(0)
+				$after_text.show();
+			} else {
+				countdown();
+			}
 		} else{
 			$submit_i.text('请输入正确的手机号码');
 		}
 	})
+
 	// 手机滑动事件
 	var
 		startY,
@@ -279,6 +291,7 @@ $(function(){
 			$money_count.text(money_count);
 		}
 	})
+
 	// 重新挑战
 	var $again_btn = $('.after_text button');
 	$again_btn.click(function(){
