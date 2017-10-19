@@ -1,5 +1,5 @@
 $(function(){
-
+	/* 隐藏浏览器地址栏 */
 	/* 首页前言以及须知按钮 */
 	var
 		$foreword_a = $('.index_block .foreword a'),
@@ -236,7 +236,6 @@ $(function(){
 			// phonenum_obj.url = '' + '?' + 'phonenum=' + phonenum;
 			// phonenum_obj.type = 'GET';
 			// $.ajax(phonenum_obj);
-			$('html,body').scrollTop('0');
 			$before_text.hide();
 			clearTimeout(T);
 			function countdown () {
