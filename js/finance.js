@@ -11,22 +11,26 @@ $(function(){
 		$foreword_block = $('.index_text_block .foreword_block'),
 		$notice_block = $('.index_text_block .notice_block'),
 		$index_close = $('.index_text_block .close_btn button');
-	$foreword_a.click(function(){
+	$foreword_a.click(function(event){
+		event.preventDefault();
 		$foreword_block.show();
 		$index_text_block.fadeIn();
 	})
-	$notice_a.click(function(){
+	$notice_a.click(function(event){
+		event.preventDefault();
 		$notice_block.show();
 		$index_text_block.fadeIn();
 	})
-	$index_close.click(function(){
+	$index_close.click(function(event){
+		event.preventDefault();
 		$index_text_block.fadeOut();
 		$foreword_block.fadeOut();
 		$notice_block.fadeOut();
 	})
 
 	/* 进入问答 */
-	$start_a.click(function(){
+	$start_a.click(function(event){
+		event.preventDefault();
 		$index_block.fadeOut();
 		$quest_block.fadeIn();
 	})
