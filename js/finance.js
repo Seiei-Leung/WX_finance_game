@@ -1,5 +1,4 @@
 $(function(){
-	/* 隐藏浏览器地址栏 */
 	/* 首页前言以及须知按钮 */
 	var
 		$foreword_a = $('.index_block .foreword a'),
