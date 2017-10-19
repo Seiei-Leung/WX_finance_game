@@ -156,42 +156,6 @@ $(function(){
 		$('.tips_block').fadeOut();
 		$('.tips_block .tips' + quest_num).fadeOut();
 	})
-	// 下一题，上一题功能
-	var
-		$pre_btn = $('.quest_block .pre a'),
-		$next_btn = $('.quest_block .next a'),
-		$money_block = $('.money_block'),
-		$before_text = $('.before_text span');
-		$next_btn.click(function(){
-			quest_num = Number($quest_num.text());
-			if (quest_num<11) {
-				quest_num += 1;
-				if (quest_num<10) {
-					$quest_num.text('0' + quest_num);
-				} else {
-					$quest_num.text(quest_num);
-				}
-				$('.quest' + (quest_num-1)).hide();
-				$('.quest' + (quest_num)).show();
-			} else if (quest_num == 11) {
-				$quest_block.hide();
-				$before_text.text(true_num);
-				$('.money_block').show();
-			}
-		})
-		$pre_btn.click(function(){
-			quest_num = Number($quest_num.text());
-			if (1<quest_num) {
-				quest_num -= 1;
-				if (quest_num<10) {
-					$quest_num.text('0' + quest_num);
-				} else {
-					$quest_num.text(quest_num);
-				}
-				$('.quest' + (quest_num+1)).hide();
-				$('.quest' + (quest_num)).show();
-			}
-		})
 
 	// 答题功能
 	var
@@ -209,14 +173,54 @@ $(function(){
 			$(this).parent('ul').find('li').off('click');
 	})
 	}
+
+	// 下一题，上一题功能
+	var
+		$pre_btn = $('.quest_block .pre a'),
+		$next_btn = $('.quest_block .next a'),
+		$before_text = $('.before_text'),
+		$money_block = $('.money_block'),
+		$before_text_span = $('.before_text span');
+		$next_btn.click(function(){
+			quest_num = Number($quest_num.text());
+			if (quest_num<11) {
+				quest_num += 1;
+				if (quest_num<10) {
+					$quest_num.text('0' + quest_num);
+				} else {
+					$quest_num.text(quest_num);
+				}
+				$('.quest' + (quest_num-1)).hide();
+				$('.quest' + (quest_num)).show();
+			} else if (quest_num == 11) {
+				$quest_block.hide();
+				$before_text_span.text(true_num);
+				$('.money_block').show();
+				$settimeout.text(true_num + '.000');
+				$before_text.show();
+			}
+		})
+		$pre_btn.click(function(){
+			quest_num = Number($quest_num.text());
+			if (1<quest_num) {
+				quest_num -= 1;
+				if (quest_num<10) {
+					$quest_num.text('0' + quest_num);
+				} else {
+					$quest_num.text(quest_num);
+				}
+				$('.quest' + (quest_num+1)).hide();
+				$('.quest' + (quest_num)).show();
+			}
+		})
 	// 提交电话号码,开始数钱
 	var
 		phonenum_obj = {},
 		$money_block = $('.money_block'),
-		$before_text = $('.before_text'),
+		$after_text = $('.after_text'),
 		$submit_btn = $('.before_text button'),
 		$submit_i = $('.before_text i'),
-		phonenum,
+		phonenum,T,
 		$phonenum = $('#phonenum');
 	$submit_btn.click(function(){
 		phonenum = $phonenum.val();
@@ -226,9 +230,23 @@ $(function(){
 			// phonenum_obj.type = 'GET';
 			// $.ajax(phonenum_obj);
 			$before_text.hide();
-
+			clearTimeout(T);
+			function countdown () {
+				T = setTimeout(function(){
+				true_num -= 1;
+				if (true_num>0) {
+					$settimeout.text(true_num + '.000');
+				} else if(true_num==0) {
+					$settimeout.text(true_num + '.000');
+					$after_text.find('span:first-child').text(money_count)
+					$after_text.show();
+				}
+				countdown();
+			},1000);
+			}
+			countdown();
 		} else{
-			$submit_i.text('请输入正确的手机号码')
+			$submit_i.text('请输入正确的手机号码');
 		}
 	})
 	// 手机滑动事件
@@ -246,7 +264,12 @@ $(function(){
 		endY = event.originalEvent.changedTouches[0].pageY;
 		if ((startY-endY)>50) {
 			money_count += 1;
-			$money_count.text('' + money_count);
+			$money_count.text(money_count);
 		}
+	})
+	// 重新挑战
+	var $again_btn = $('.after_text button');
+	$again_btn.click(function(){
+		location.reload();
 	})
 })

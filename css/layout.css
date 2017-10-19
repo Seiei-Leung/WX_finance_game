@@ -2,10 +2,10 @@
 	position: relative;
 	width: 10rem;
 	height: 100vh;
+	z-index: 5
 }
 /* 首页样式 */
 .index_block{
-	display: none;
 	height: 100vh;
 	background-image: url("../img/index_bg.jpg");
 	background-size: 100% 100%;
@@ -334,11 +334,16 @@
 }
 /* 数钱页面 */
 .money_block {
+	display: none;
+	box-sizing: border-box;
 	height: 100vh;
+	width: 10rem;
 	background-image: url("../img/money_bg.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	padding-top: 1.5rem;
+	position: relative;
+	z-index: -100;
 }
 .money_block .title {
 	margin-left: 0.5rem;
@@ -369,20 +374,21 @@
 	font-size: 2rem;
 	text-align: center;
 }
-.money_block .after_text{
+.after_text{
 	display: none
 }
-.money_block .before_text,
-.money_block .after_text{
+.before_text,
+.after_text{
+	display: none;
 	position: absolute;
 	top:0;
 	width: 10rem;
 	height: 100vh;
 	background-color: rgba(0,0,0,.7);
-
+	z-index: 1000;
 }
-.money_block .before_text p,
-.money_block .after_text p{
+.before_text p,
+.after_text p{
 	color: #fff;
 	font-size: 2em;
 	line-height: 1.5em;
@@ -391,7 +397,7 @@
 	text-align: center;
 	margin-top: 30vh;
 }
-.money_block .before_text input{
+.before_text input{
 	display: block;
 	margin:auto;
 	margin-top: 3vh;
@@ -401,7 +407,7 @@
 	font-size: 1em;
 	border-radius: 5px;
 }
-.money_block button{
+.before_text button,.after_text button{
 	display: block;
 	margin:auto;
 	background-color: transparent;
@@ -409,11 +415,11 @@
 	height: 2rem;
 	margin-top: 5vh
 }
-.money_block button img{
+.before_text button img,.after_text button img{
 	width: 4rem;
 	height: 2rem;
 }
-.before_text i{
+.before_text i,.after_text i{
 	display: block;
 	width: 4rem;
 	margin:auto;
