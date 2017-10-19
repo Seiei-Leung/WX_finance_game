@@ -146,7 +146,8 @@ $(function(){
 		$tips_block = $('.quest_block .tips_block'),
 		$tips_close = $('.tips_block .close_btn button'),
 		$tips_btn = $('.quest_block .tips a');
-	$tips_btn.click(function(){
+	$tips_btn.click(function(event){
+		event.preventDefault();
 		quest_num = Number($quest_num.text());
 		$('.tips_block').fadeIn();
 		$('.tips_block .tips' + quest_num).fadeIn();
@@ -181,7 +182,8 @@ $(function(){
 		$before_text = $('.before_text'),
 		$money_block = $('.money_block'),
 		$before_text_span = $('.before_text span');
-		$next_btn.click(function(){
+		$next_btn.click(function(event){
+			event.preventDefault();
 			quest_num = Number($quest_num.text());
 			if (quest_num<11) {
 				quest_num += 1;
@@ -200,7 +202,8 @@ $(function(){
 				$before_text.show();
 			}
 		})
-		$pre_btn.click(function(){
+		$pre_btn.click(function(event){
+			event.preventDefault();
 			quest_num = Number($quest_num.text());
 			if (1<quest_num) {
 				quest_num -= 1;
