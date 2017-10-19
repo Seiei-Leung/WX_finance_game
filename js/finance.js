@@ -237,6 +237,7 @@ $(function(){
 			// phonenum_obj.type = 'GET';
 			// $.ajax(phonenum_obj);
 			$before_text.hide();
+			window.scrollTo(0, 1);
 			clearTimeout(T);
 			function countdown () {
 				T = setTimeout(function(){
