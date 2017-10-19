@@ -218,6 +218,11 @@ $(function(){
 				}
 				$('.quest' + (quest_num+1)).hide();
 				$('.quest' + (quest_num)).show();
+			} else if (quest_num == 1) {
+				$('.msg').fadeIn();
+				setTimeout(function(){
+					$('.msg').fadeOut();
+				},500)
 			}
 		})
 	// 提交电话号码,开始数钱
@@ -237,7 +242,7 @@ $(function(){
 			// phonenum_obj.type = 'GET';
 			// $.ajax(phonenum_obj);
 			$before_text.hide();
-			window.scrollTo(0, 1);
+			window.scrollTo(0, 1);//摆正网页
 			clearTimeout(T);
 			function countdown () {
 				T = setTimeout(function(){

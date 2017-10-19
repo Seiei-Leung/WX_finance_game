@@ -426,3 +426,18 @@
 	margin-top: 0.5em;
 	color: #fe6048
 }
+/* 信息 */
+.msg {
+	display: none;
+	position: absolute;
+	top:40vh;
+	left: 0;
+	right: 0;
+	margin:auto;
+	width: 6rem;
+	text-align: center;
+	color: #fff;
+	background-color: rgba(0,0,0,.8);
+	line-height: 1.5em;
+	border-radius: 5px;
+}
